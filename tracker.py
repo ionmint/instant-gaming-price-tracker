@@ -230,7 +230,8 @@ def cmd_update():
             continue
         product["name"] = name
         product["currency"] = currency
-        product["history"].append({"timestamp": now, "price": price})
+        if price != product["history"][-1]["price"]:
+            product["history"].append({"timestamp": now, "price": price})
 
     save_data(data)
     generate_report(data)
