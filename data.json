@@ -42,6 +42,19 @@
           "price": 11.49
         }
       ]
+    },
+    {
+      "sku": "9093",
+      "url": "https://www.instant-gaming.com/it/9093-comprare-ghost-of-tsushima-director-s-cut-pc-steam/",
+      "name": "Ghost of Tsushima: Director's Cut",
+      "currency": "EUR",
+      "added_at": "2026-08-26T15:49:14",
+      "history": [
+        {
+          "timestamp": "2026-08-26T15:49:14",
+          "price": 32.89
+        }
+      ]
     }
   ]
 }
