@@ -1,3 +1,17 @@
 {
-  "products": []
+  "products": [
+    {
+      "sku": "17017",
+      "url": "https://www.instant-gaming.com/it/17017-comprare-mixtape-pc-steam/",
+      "name": "Mixtape - Europe & USA & Canada",
+      "currency": "EUR",
+      "added_at": "2026-08-26T00:40:48",
+      "history": [
+        {
+          "timestamp": "2026-08-26T00:40:48",
+          "price": 13.99
+        }
+      ]
+    }
+  ]
 }
