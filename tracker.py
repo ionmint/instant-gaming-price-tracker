@@ -243,12 +243,43 @@ def cmd_report():
     print(f"Report rigenerato: {REPORT_FILE}")
 
 
+def cmd_remove(identifier):
+    data = load_data()
+    key = identifier.strip()
+    key_lower = key.lower()
+
+    matches = [
+        p for p in data["products"]
+        if p["sku"] == key
+        or p["url"].rstrip("/") == key.rstrip("/")
+        or key_lower in p["name"].lower()
+    ]
+
+    if not matches:
+        print(f"Nessun prodotto trovato per: {identifier}", file=sys.stderr)
+        sys.exit(1)
+
+    if len(matches) > 1:
+        options = ", ".join(f"{p['name']} (sku {p['sku']})" for p in matches)
+        print(f"Trovati piu' prodotti, specifica meglio (es. lo sku): {options}", file=sys.stderr)
+        sys.exit(1)
+
+    product = matches[0]
+    data["products"] = [p for p in data["products"] if p["sku"] != product["sku"]]
+    save_data(data)
+    generate_report(data)
+    print(f"Rimosso: {product['name']} (sku {product['sku']})")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Instant Gaming price tracker")
     sub = parser.add_subparsers(dest="command", required=True)
 
     p_add = sub.add_parser("add", help="Aggiungi un prodotto da tracciare")
     p_add.add_argument("url")
+
+    p_remove = sub.add_parser("remove", help="Rimuovi un prodotto tracciato (sku, URL o nome anche parziale)")
+    p_remove.add_argument("identifier")
 
     sub.add_parser("update", help="Aggiorna il prezzo di tutti i prodotti tracciati")
     sub.add_parser("report", help="Rigenera index.html senza fare richieste di rete")
@@ -257,6 +288,8 @@ def main():
 
     if args.command == "add":
         cmd_add(args.url)
+    elif args.command == "remove":
+        cmd_remove(args.identifier)
     elif args.command == "update":
         cmd_update()
     elif args.command == "report":

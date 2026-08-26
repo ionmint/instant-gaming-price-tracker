@@ -1,21 +1,3 @@
 {
-  "products": [
-    {
-      "sku": "4824",
-      "url": "https://www.instant-gaming.com/en/4824-buy-elden-ring-pc-steam/",
-      "name": "Elden Ring - Europe",
-      "currency": "EUR",
-      "added_at": "2026-08-26T00:27:29",
-      "history": [
-        {
-          "timestamp": "2026-08-26T00:27:29",
-          "price": 45.99
-        },
-        {
-          "timestamp": "2026-08-26T00:28:01",
-          "price": 45.99
-        }
-      ]
-    }
-  ]
+  "products": []
 }
