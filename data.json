@@ -29,6 +29,19 @@
           "price": 6.99
         }
       ]
+    },
+    {
+      "sku": "8260",
+      "url": "https://www.instant-gaming.com/it/8260-comprare-stray-pc-mac-gioco-steam-europe-us-canada/",
+      "name": "Stray - Europe & USA & Canada",
+      "currency": "EUR",
+      "added_at": "2026-08-26T15:48:50",
+      "history": [
+        {
+          "timestamp": "2026-08-26T15:48:50",
+          "price": 11.49
+        }
+      ]
     }
   ]
 }
