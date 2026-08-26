@@ -5,6 +5,7 @@ import re
 import sys
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 import requests
 from bs4 import BeautifulSoup
@@ -12,6 +13,8 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parent
 DATA_FILE = ROOT / "data.json"
 REPORT_FILE = ROOT / "index.html"
+
+TRACKED_CURRENCY = "EUR"
 
 HEADERS = {
     "User-Agent": (
@@ -22,8 +25,18 @@ HEADERS = {
 }
 
 
+def with_currency(url, currency=TRACKED_CURRENCY):
+    # Instant Gaming otherwise prices by the requester's geolocated IP
+    # (e.g. GitHub Actions runners are US-based -> USD), so the currency
+    # must be pinned explicitly to get consistent, comparable history.
+    parts = urlsplit(url)
+    query = dict(parse_qsl(parts.query))
+    query["currency"] = currency
+    return urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(query), parts.fragment))
+
+
 def fetch_html(url):
-    resp = requests.get(url, headers=HEADERS, timeout=15)
+    resp = requests.get(with_currency(url), headers=HEADERS, timeout=15)
     resp.raise_for_status()
     return resp.text
 
