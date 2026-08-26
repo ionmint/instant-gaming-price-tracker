@@ -55,6 +55,19 @@
           "price": 32.89
         }
       ]
+    },
+    {
+      "sku": "16007",
+      "url": "https://www.instant-gaming.com/it/16007-comprare-elden-ring-shadow-of-the-erdtree-edition-pc-steam/",
+      "name": "Elden Ring Shadow of the Erdtree Edition - Europe",
+      "currency": "EUR",
+      "added_at": "2026-08-26T15:50:37",
+      "history": [
+        {
+          "timestamp": "2026-08-26T15:50:37",
+          "price": 58.99
+        }
+      ]
     }
   ]
 }
