@@ -16,6 +16,19 @@
           "price": 13.99
         }
       ]
+    },
+    {
+      "sku": "3416",
+      "url": "https://www.instant-gaming.com/it/3416-comprare-kenshi-pc-gioco-steam/",
+      "name": "Kenshi",
+      "currency": "EUR",
+      "added_at": "2026-08-26T15:48:34",
+      "history": [
+        {
+          "timestamp": "2026-08-26T15:48:34",
+          "price": 6.99
+        }
+      ]
     }
   ]
 }
