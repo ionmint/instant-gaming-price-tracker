@@ -416,6 +416,19 @@
           "price": 11.39
         }
       ]
+    },
+    {
+      "sku": "14205",
+      "url": "https://www.instant-gaming.com/it/14205-comprare-phantom-blade-zero-pc-steam/",
+      "name": "Phantom Blade Zero - Europe & USA & Canada",
+      "currency": "EUR",
+      "added_at": "2026-11-08T15:22:14",
+      "history": [
+        {
+          "timestamp": "2026-11-08T15:22:14",
+          "price": 45.49
+        }
+      ]
     }
   ]
 }
